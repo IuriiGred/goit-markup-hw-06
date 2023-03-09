@@ -459,15 +459,13 @@ ul {
 /* ****************** Footer Subscribe **************** */
 
 .form-footer {
-  position: relative;
-  display: flex;
   margin-left: 80px;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .footer-mail {
+  margin-top: 16px;
   display: flex;
-  flex-direction: column;
 }
 
 .footer-label {
@@ -479,14 +477,19 @@ ul {
 }
 
 .footer-input {
+  color: var(--color-cornflower);
   padding-left: 16px;
-  margin-top: 16px;
   margin-right: 24px;
   height: 40px;
   min-width: 264px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: var(--color-navy-back);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.footer-input:focus {
+  border-color: #2196f3;
 }
 
 .form-button {
@@ -507,18 +510,13 @@ ul {
 
 .form-icon-telegram {
   position: absolute;
-  top: 50%;
+  top: 8px;
   right: 24px;
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   fill: var(--color-white);
 }
-
-/* .form-icon-telegram:hover,
-.form-icon-telegram:focus {
-  fill: var(--color-iris);
-} */
 
 /* ***************** Portfolio ********************* */
 
@@ -729,6 +727,7 @@ ul {
   max-height: 584px;
   height: 100%;
   background-color: var(--color-modal);
+  padding: 72px 24px 0 24px;
 }
 
 .modal-close {
@@ -769,12 +768,7 @@ ul {
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.5;
-  padding: 72px 24px 0 24px;
-}
-
-.form-contact {
-  margin: 16px 24px;
-  width: 360px;
+  margin-bottom: 16px;
 }
 
 .contact {
@@ -785,32 +779,47 @@ ul {
   line-height: 1.333;
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
   padding: 0;
 }
 
 .label-text {
+  position: relative;
+  margin-bottom: 4px;
+  color: var(--color-light-slate);
+}
+
+.label-text:last-child {
+  margin-bottom: 0;
+}
+
+.label-textarea {
+  width: 100%;
+  border-radius: 4px;
+  resize: none;
+  height: 120px;
+
   margin-bottom: 4px;
   color: var(--color-light-slate);
 }
 
 .input {
+  width: 100%;
   position: relative;
   padding-left: 38px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  color: currentColor;
 
   transition-property: color, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input:hover,
 .input:focus {
-  border: 1px solid var(--color-iris);
-  outline-color: var(--color-iris);
+  outline: 1px solid var(--color-iris);
+}
+
+.input:focus + .form-icon {
   fill: var(--color-iris);
 }
 
@@ -818,18 +827,13 @@ ul {
   position: absolute;
   top: 50%;
   left: 16px;
-  display: inline-block;
   width: 18px;
   height: 18px;
   color: currentColor;
 }
 
-.form-icon:hover,
-.form-icon:focus {
-  fill: var(--color-iris);
-}
-
 .contact textarea {
+  width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
@@ -842,9 +846,15 @@ ul {
   color: rgba(117, 117, 117, 0.5);
 }
 
+.form-textarea:focus {
+  outline: 1px solid var(--color-iris);
+  color: var(--color-navy-back);
+}
+
 .submit-button {
   display: flex;
   justify-content: center;
+  margin: auto;
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -853,7 +863,6 @@ ul {
   height: 56px;
   cursor: pointer;
   color: var(--color-white);
-  border: 1px solid var(--color-submit);
   background-color: var(--color-iris-back);
   transition: color 250ms linear, background-color 250ms linear;
 }
@@ -880,7 +889,8 @@ ul {
 .privacy-policy {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  margin-top: 16px;
   margin-bottom: 24px;
   gap: 8px;
 }
